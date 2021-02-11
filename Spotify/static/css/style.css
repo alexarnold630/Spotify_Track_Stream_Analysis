@@ -1,0 +1,77 @@
+.tooltip {
+    position: absolute;
+    width: 135px;
+    height: 60px;
+    padding: 2px;
+    padding-top: 8px;
+    font: 12px sans-serif;
+    color: white;
+    text-align: center;
+    background: #551aaf;
+    border: 0;
+    border-radius: 10px;
+}
+
+.axisText {
+    font-family: sans-serif;
+    font-weight: bold;
+    fill: #551aaf;
+    text-anchor: middle;
+}
+
+.active {
+    opacity: 1;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+
+.line {
+    fill: none;
+    stroke-width: 2px;
+  }
+  
+  
+  .green {
+    stroke: #1ED760;
+  }
+
+  .mintgreen {
+    stroke: #c3f0c8
+  }
+
+  .purple {
+    stroke: #af2896;
+  }
+
+  .blue {
+    stroke: #2d46b9;
+  }
+
+  .lightblue {
+    stroke: #007aff
+  }
+
+  .yellow {
+    stroke: #ffc864;
+  }
+
+  .pink {
+    stroke: #f573a0;
+  }
+
+  .red {
+    stroke: #eb1e32;
+  }
+
+  .legend {
+    height: 300px; 
+    float: right;
+ }
+
+ .right {
+  float: right;
+}
+
+  

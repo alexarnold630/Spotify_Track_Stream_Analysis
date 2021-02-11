@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Features</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css">-->
+
+   <!-- <link rel="stylesheet"  href="style.css">-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Spotify</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+             <!--<li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="#">Streams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sound.html">Sound</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="data.html">Data</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="features.html">Features</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--JUMBOTRON-->
+    <div class="jumbotron">
+        <h3 class="display-3">Spotify Dashboard</h3>
+        <a class="btn btn-primary btn-md" href="index.html" role="button">Streams</a>
+        <a class="btn btn-primary btn-md" href="sound.html" role="button">Sound</a>
+        <a class="btn btn-primary btn-md" href="data.html" role="button">Data</a>
+        <a class="btn btn-primary btn-md" href="features.html" role="button">Features</a>
+    </div>
+
+    <!--FEATURES-->
+    <div class="container-fluid">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr class="table-success">
+              <th scope="col">Audio Feature</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+              <td>Acousticness</td>
+              <td>The relative metric of the track being acoustic</td>
+            </tr>
+            <tr>
+              <td>Danceability</td>
+              <td>The relative measurement of the track being danceable</td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td>The length of the track in milliseconds (ms)</td>
+            </tr>
+            <tr>
+              <td>Energy</td>
+              <td>The energy of the track</td>
+            </tr>
+            <tr>
+              <td>Explicit</td>
+              <td>The binary value whether the track contains explicit content or not</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Column content</td>
+            </tr>
+            <tr>
+              <td>Instrumentalness</td>
+              <td>The relative ratio of the track being instrumental</td>
+            </tr>
+            <tr>
+              <td>Key</td>
+              <td>The primary key of the track encoded as integers in between 0 and 11</td>
+            </tr>
+            <tr>
+              <td>Liveness</td>
+              <td>The relative duration of the track sounding as a live performance</td>
+            </tr>
+            <tr>
+              <td>Loudness</td>
+              <td>Relative loudness of the track in the typical range [-60, 0] in decibel (dB)</td>
+            </tr>
+            <tr>
+              <td>Mode</td>
+              <td>The binary value representing whether the track starts with a major (1) chord progression or not (0)</td>
+            </tr>
+            <tr>
+              <td>Popularity</td>
+              <td>The popularity of the song lately, default country = US</td>
+            </tr>
+            <tr>
+              <td>Speechiness</td>
+              <td>The relative length of the track containing any kind of human voice</td>
+            </tr>
+            <tr>
+              <td>Tempo</td>
+              <td>The tempo of the track in Beat Per Minute (BPM)</td>
+            </tr>
+            <tr>
+              <td>Valence</td>
+              <td>The positiveness of the track</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spotify</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css">-->
+
+   <!-- <link rel="stylesheet"  href="style.css">-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script src="https://unpkg.com/jeezy@1.13.1/lib/jeezy.min.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Spotify</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+             <!--<li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="#">Streams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sound.html">Sound</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="data.html">Data</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--JUMBOTRON-->
+    <div class="jumbotron">
+        <h3 class="display-3">Spotify Dashboard</h3>
+        <a class="btn btn-primary btn-md" href="index.html" role="button">Streams</a>
+        <a class="btn btn-primary btn-md" href="sound.html" role="button">Sound</a>
+        <a class="btn btn-primary btn-md" href="data.html" role="button">Data</a>
+        <a class="btn btn-primary btn-md" href="features.html" role="button">Features</a>
+    </div>
+
+
+    <!--DASHBOARD: STREAMS-->
+    <div class="container-fluid">
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-12">
+                <div id="map"></div> 
+            </div>
+            </div>
+                <div class="row" style="margin-top:5%">
+            <div>
+                <select id="data_columns">
+                    <option>Top 10</option>
+                    <option>Top 20</option>         
+                    <option>Bottom 10</option>
+                    <option>Bottom 20</option>   
+                </select>
+            </div>
+            <div class = "col-md-6">
+                <div id="bar"></div>
+            </div>
+           <div class = "col-md-6">
+                <div id="bubble"></div> 
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
