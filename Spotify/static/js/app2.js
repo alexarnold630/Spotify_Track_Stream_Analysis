@@ -251,8 +251,9 @@ function makeLineChart(filterData){
             .attr("x", (chart_width / 2))             
             .attr("y", 0 - (margin.top / 2))
             .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
-            .attr("class", "axisText")  
+            .style("font-size", "18px") 
+            .style("font-weight", "bold") 
+            //.attr("class", "axisText")  
             .text("Audio Features Over Time");
 
         chartGroup.append("text")
@@ -260,14 +261,15 @@ function makeLineChart(filterData){
             .attr("y", 0 - margin.left)
             .attr("x", 0 - (chart_height / 2))
             .attr("dy", "1em")
-            .attr("class", "axisText")
+            .style("font-size", "14px") 
+            //.attr("class", "axisText")
             .text("Value");
 
         chartGroup.append("text")
             .attr("transform", `translate(${chart_width / 2}, ${chart_height + margin.top + 20})`)
             .attr("text-anchor", "middle")
-            .attr("font-size", "16px")
-            .attr("class", "axisText")
+            .attr("font-size", "14px")
+            //.attr("class", "axisText")
             .text("Year");
         
         //STEP 8: ADD LEGEND
@@ -336,8 +338,14 @@ function buildHeatmap(filterData) {
     var data = [trace];
 
     var layout = {
-        title: "Audio Feature Heatmap",
-    }
+        title: {
+            text: "Audio Feature Heatmap",
+            font: {
+                size: 18,
+                weight: bold
+            }
+        }
+    };
 
     Plotly.newPlot('heatmap', data, layout);
 }

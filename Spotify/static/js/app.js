@@ -2,6 +2,7 @@ $(document).ready(function() {
     makeMap();
     var selectionFilter = $("#data_columns").val();
     readStreamsData(selectionFilter);
+    buildBubbleChart();
     
     //Event Listener
     $("#data_columns").on("change", function() {
@@ -23,10 +24,10 @@ function makePlots() {
     //     buildBarchart(trackData);
     // });
 
-//     // d3.csv("static/data/data_by_genres.csv").then(function(byGenresData) {
-//     //     console.log(byGenresData);
-//     //     //buildPlot(byGenresData);
-//     // });
+    // d3.csv("static/data/data_by_genres.csv").then(function(byGenresData) {
+    //     console.log(byGenresData);
+    //     //buildPlot(byGenresData);
+    // });
 
 //     // d3.csv("static/data/data_by_year.csv").then(function(yearData) {
 //     //     console.log(yearData);
@@ -35,7 +36,7 @@ function makePlots() {
 
     d3.csv("static/data/data_w_genres.csv").then(function(genreData) {
         console.log(genreData);
-        buildBubbleChart(genreData);
+       // buildBubbleChart(genreData);
     });
 
     // d3.csv("static/data/Top_Streams_2020.csv").then(function(streamsData) {
@@ -120,10 +121,16 @@ function buildBarchart(barData){
             title: "Number of Streams by Track Name for 2020",
             xaxis: {
                 type: "category",
-                title: "Track Name"
+                title: "Track Name",
+                font: {
+                    size: 14,
+                },
             },
             yaxis: {
-                title: "No. Streams (in billions)"
+                title: "No. Streams (in billions)",
+                font: {
+                    size: 14,
+                }
             },
             color:  "#1ED760",
         };
@@ -131,7 +138,7 @@ function buildBarchart(barData){
           Plotly.newPlot('bar', data, layout);
     };  
 
-//FIX
+
 function buildBubbleChart(genreData) {
 
     genreData.forEach(function(row) {
@@ -156,7 +163,7 @@ function buildBubbleChart(genreData) {
         //text: sample_data.otu_labels.map(String),
         mode: 'markers',
         marker: {
-        color: genreData.genres,
+        color: byGenresData.map( x => x.genres),
         opacity: [1, 0.8, 0.6, 0.4],
         size: genreData.map( x => x.Count)
         }
