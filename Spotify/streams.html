@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sound</title>
+    <title>Spotify</title>
 
     <!-- Bootstrap and Bootswatch CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
     <script src="https://unpkg.com/jeezy@1.13.1/lib/jeezy.min.js"></script>
-    <script type="text/javascript" src="static/js/app2.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
 </head>
 
 <body>
@@ -36,11 +36,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="streams.html">Dashboard</a>
-                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="sound.html">Sound</a>
+                    <a class="nav-link" href="streams.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="data.html">Data</a>
@@ -55,85 +52,72 @@
         </div>
     </nav>
 
-   <!--JUMBOTRON-->
-   <div class="jumbotron text-center">
+    <!--JUMBOTRON-->
+    <div class="jumbotron text-center">
         <h3 class="display-3">Spotify Dashboard</h3>
         <a class="btn btn-success btn-md" href="streams.html" role="button">Streams</a>
         <a class="btn btn-success btn-md" href="sound.html" role="button">Sound</a>
     </div>
 
-    <!--DASHBOARD: SOUND-->
+
+    <!--DASHBOARD: STREAMS-->
     <div class="container-fluid">
         <div class="row" style="margin-top:5%">
-            <div class = "col-lg-12">
-                <h3>Change of Audio Featuers Over Time</h3>
-                <br>
-                <p>
-                    The Audio Features Line Chart shows the change in the audio features over the time period 1920-present. 
-                    <br>
-                    AUDIO FEATURES ARE WHAT????? ANSWER HERE.
-                    To learn more about the audio features, visit the <a href="glossary.html/"><b>Glossary Page</b></a>. 
-                    <br>
-                    Filter the audio feature line chart by decade using the dropdown.
-                    <br>
-                    ADD CONCLUSIONS
-                </p>
+            <div class = "col-md-12">
+                <h3>World Map of Countries by Number of Streams</h3>
             </div>
         </div>
         <div class="row" style="margin-top:5%">
+            <div class = "col-md-4">
+                <p>Click on the world to rotate to your desired country. Zoom in and out by hovering over the world and pinching/scrolling. 
+                    Hover over a country to see its total number of streams.
+                    <br>
+                    <br>
+                    The United States is the country with the most streams at ENTER BILLIONS.
+                    MORE CONCLUSIONS.....
+                </p>
+            </div>
+            <div class = "col-md-8">
+                <div id="map"></div> 
+            </div>
+        </div>
+        <hr>
+        <!--BAR CHART-->
+        <div class="row" style="margin-top:5%">
             <div class = "col-md-12">
-                <div class="card border-secondary mb-3" style="max-width: 8rem;"></div>
-                    <select id="decade">
-                        <option value="-1">All</option>
-                        <option>2020</option>
-                        <option>2010</option>
-                        <option>2000</option>
-                        <option>1990</option>
-                        <option>1980</option>
-                        <option>1970</option>
-                        <option>1960</option>
-                        <option>1950</option>
-                        <option>1940</option>
-                        <option>1930</option>
-                        <option>1920</option>
+                <h3>Streams of 2020</h3>
+            </div>
+        </div>
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-8">
+                <div class="card border-secondary mb-3" style="max-width: 8rem;">
+                    <select id="data_columns">
+                        <option>Top 10</option>
+                        <option>Top 20</option>         
+                        <option>Bottom 10</option>
+                        <option>Bottom 20</option>   
                     </select>
                 </div>
-            </div>
-            <div id="line"></div>
-        </div>
-        <hr>
-        <div class="row" style="margin-top:5%">
-            <div class = "col-md-12">
-                <h3>Audio Feature Correlations</h3>
-            </div>
-        </div>
-        <div class="row" style="margin-top:5%">
-            <div class = "col-md-8">
-                <div id="heatmap"></div>
+                <div id="bar"></div>
             </div>
             <div class = "col-md-4">
-                <p> The Audio Feature Heatmap highlights the features' correlations. 
-                    The color scale displays yellow with the strongest correlation down to dark purple with the weakest.
-
-                    ENTER CONCLUSIONS
+                <p>Filter the Streams Bar Chart to display the Top 10, Top 20, Bottom 10, and Bottom 20 tracks by number of streams for the year 2020.
                 </p>
             </div>
         </div>
         <hr>
+        <!--BUBBLE CHART-->
         <div class="row" style="margin-top:5%">
             <div class = "col-md-12">
-                <h3>Scatterplot</h3>
+                <h3>Genres Something</h3>
             </div>
         </div>
         <div class="row" style="margin-top:5%">
             <div class = "col-md-4">
-                <p> The Scatterplot shows. 
-
-                    ENTER CONCLUSIONS
-                </p>
+                <p>PUT IN ABOUT AND CONCLUSIONS</p>
             </div>
             <div class = "col-md-8">
-                <div id="scatter"></div>
+                <div id="bubble"></div> 
             </div>
         </div>
     </div>

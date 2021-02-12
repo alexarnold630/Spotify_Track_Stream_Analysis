@@ -330,13 +330,13 @@ function buildHeatmap(filterData) {
         y: ["Acousticness", "Danceability","Energy", "Instrumentalness", "Liveness", "Speechiness", "Valence"],
         type: 'heatmap',
         colorscale: 'Viridis',
-        //hoverinfo: biglist 
+        hovertemplate: '%{z}<extra></extra>',
     };
 
     var data = [trace];
 
     var layout = {
-        title: "Audio Feature Heatmap"
+        title: "Audio Feature Heatmap",
     }
 
     Plotly.newPlot('heatmap', data, layout);

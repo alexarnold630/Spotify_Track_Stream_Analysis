@@ -54,7 +54,7 @@ function makeMap() {
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
         }
-        console.log(rows);
+        //console.log(rows);
         var data = [{
                 type: 'choropleth',
                 locations: unpack(rows, 'Region'),
@@ -103,32 +103,35 @@ function readStreamsData(selectionFilter) {
 
 function buildBarchart(barData){
 
-        //parseint of streams data
-        //MESSED UP
-       
-
-        //FIX THIS SOMEHOW
-        //streamsData = streamsData.sort((a,b) => b.Streams - a.Streams).slice(0,10);
         var trace = {
             x: barData.map( x => x["Track Name"]),
             y: barData.map( x => x.Streams),
             text: barData.map(x =>x.Artist),
-            type: 'bar'
-        }
+            hovertemplate: '%{text}: %{y}<extra></extra>',
+            type: 'bar',
+            marker: {
+                color: "#1ED760",
+            }
+        };
+
         var data = [trace];
     
         var layout = {
-            title: "Streams of 2020",
+            title: "Number of Streams by Track Name for 2020",
             xaxis: {
-                type: "category"
-            }
+                type: "category",
+                title: "Track Name"
+            },
+            yaxis: {
+                title: "No. Streams (in billions)"
+            },
+            color:  "#1ED760",
         };
           
           Plotly.newPlot('bar', data, layout);
-        //buildBarchart(streamsData);
     };  
 
-
+//FIX
 function buildBubbleChart(genreData) {
 
     genreData.forEach(function(row) {
@@ -147,9 +150,6 @@ function buildBubbleChart(genreData) {
         row.mode = +row.mode;
     });
 
-    //x: streamsData.map( x => x.Artist),
-    //y: streamsData.map( x => x.Streams),
-    
     var trace1 = {
         x: genreData.map( x => x.Popularity),
         y: genreData.map( x => x.Count),
