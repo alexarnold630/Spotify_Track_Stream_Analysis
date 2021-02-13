@@ -124,7 +124,7 @@ function buildBarchart(barData){
                 title: "Track Name",
                 font: {
                     size: 14,
-                },
+                }
             },
             yaxis: {
                 title: "No. Streams (in billions)",
@@ -133,6 +133,13 @@ function buildBarchart(barData){
                 }
             },
             color:  "#1ED760",
+            margin: {
+                l: 80,
+                r: 80,
+                b: 80,
+                t: 30,
+                pad: 20
+              },
         };
           
           Plotly.newPlot('bar', data, layout);

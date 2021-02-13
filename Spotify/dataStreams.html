@@ -18,7 +18,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
-    <script type="text/javascript" src="static/js/app3.js"></script>
+    <script type="text/javascript" src="static/js/app4.js"></script>
 
     <!--FROM SAM-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
@@ -28,11 +28,10 @@
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
-  
 </head>
 
 <body>
@@ -77,66 +76,57 @@
 
     <!--ENTER DATA TABLE-->
     <div class="wrapper">
-      <nav class="navbar navbar-default">
-          <div class="container-fluid">
-              <div class="navbar-header">
-              </div>
-          </div>
-      </nav>
-      <div class="hero text-center">
-          <h1>By Year</h1>
-      </div>
-      <div class="container-fluid">
-          <div class="row margin-top-50">
-              <div class="col-md-2">
-                  <aside class="filters">
-                      <div class="panel panel-default">
-                          <div class="panel-heading">Filter Search</div>
-                          <div class="panel-body">
-                              <form id="form">
-                                  <div class="form-group">
-                                      <ul class="list-group" id="filters">
-                                          <li class="filter list-group-item">
-                                              <label for="year">Enter a Year</label>
-                                              <input class="form-control" id="year" type="text" placeholder="2010">
-                                          </li>
-                                      </ul>
-                                  </div>
-                                  <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
-                                  <button id="filter-clear" type="button" class="btn btn-secondary">Clear Filters</button>
-                              </form>
-                          </div>
-                      </div>
-                  </aside>
-              </div>
-              <div class="col-md-10">
-                  <div id="table-area" class="">
-                      <table id="table" class="table-hover table-striped">
-                          <thead>
-                              <tr>
-                                  <th class="table-head">Year</th>
-                                  <th class="table-head">Acousticness</th>
-                                  <th class="table-head">Dancebility</th>
-                                  <th class="table-head">Duration_MS</th>
-                                  <th class="table-head">Energy</th>
-                                  <th class="table-head">Instrumentalness</th>
-                                  <th class="table-head">Liveness</th>
-                                  <th class="table-head">Loudness</th>
-                                  <th class="table-head">Speachiness</th>
-                                  <th class="table-head">Tempo</th>
-                                  <th class="table-head">Valence</th>
-                                  <th class="table-head">Popularity</th>
-                                  <th class="table-head">Key</th>
-                                  <th class="table-head">Mode</th>
-                              </tr>
-                          </thead>
-                          <tbody></tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                </div>
+            </div>
+        </nav>
+        <div class="text-center">
+            <h1>By Streams</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row margin-top-50">
+                <div class="col-md-2">
+                    <aside class="filters">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Filter Search</div>
+                            <div class="panel-body">
+                                <form id="form">
+                                    <div class="form-group">
+                                        <label for="streams">Select Rankings</label>
+                                            <select class="form-control" id="streams">
+                                                <option>All</option>
+                                                <option>Top 10</option>
+                                                <option>Top 50</option>
+                                                <option>Bottom 10</option>
+                                                <option>Bottom 50</option>
+                                            </select>
+                                    </div>
+                                    <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                                    <button id="filter-clear" type="button" class="btn btn-secondary">Clear Filters</button>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-md-10">
+                    <div id="table-area" class="">
+                        <table id="table" class="table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="table-head">Track Name</th>
+                                    <th class="table-head">Artists</th>
+                                    <th class="table-head">Streams</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
