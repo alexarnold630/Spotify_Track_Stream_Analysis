@@ -1,4 +1,4 @@
-var chosen_xaxis = "valence";
+var chosen_xaxis = "danceability";
 var chosen_yaxis = "popularity";
 
 $(document).ready(function() {
@@ -563,39 +563,6 @@ function doWork() {
                 d3.select("#energy").classed("inactive", true);
             });
 
-        // FOURTH AXIS
-        // chartGroup.append("text")
-        //     .attr("transform", `translate(${chart_width / 2}, ${chart_height + margin.top + 70})`)
-        //     .attr("class", "axisText inactive")
-        //     .attr("id", "instrumentalness")
-        //     .text("instrumentalness")
-        //     .style("cursor", "pointer")
-        //     .on("click", function() {
-        //         chosen_xaxis = "instrumentalness";
-
-        //         // update the x scale
-        //         xScale = createXScale(yearData, chart_width);
-
-        //         //update the x axis
-        //         bottomAxis = d3.axisBottom(xScale);
-        //         xAxis = createXAxis(xAxis, bottomAxis);
-
-        //         // update the GROUPS that we have on the graph
-        //         circlesGroup = updateCircles(circlesGroup, xScale);
-        //         textGroup = updateText(textGroup, xScale);
-
-        //         circlesGroup = createTooltip(circlesGroup);
-
-        //         d3.select(this).classed("inactive", false);
-        //         d3.select(this).classed("active", true);
-
-        //         d3.select("#acousticness").classed("active", false);
-        //         d3.select("#acousticness").classed("inactive", true);
-        //         d3.select("#energy").classed("active", false);
-        //         d3.select("#energy").classed("inactive", true);
-        //     });
-
-
         // STEP 8: TOOLTIP
         circlesGroup = createTooltip(circlesGroup);
 
@@ -644,10 +611,10 @@ function updateText(textGroup, xScale) {
 function createTooltip(circlesGroup) {
     //step 0, get label
     var label = "";
-    if (chosen_xaxis == "valence") {
-        label = "valence";
-    } else if (chosen_xaxis == "danceability") {
+    if (chosen_xaxis == "danceability") {
         label = "danceability";
+    } else if (chosen_xaxis == "valence") {
+        label = "valence";
     } else {
         label = "energy";
     }
@@ -657,7 +624,8 @@ function createTooltip(circlesGroup) {
         .attr("class", "d3-tip")
         .offset([180, -60])
         .html(function(d) {
-            return (`<strong>${label}: ${d[chosen_xaxis]}</strong><hr><strong> danceability: ${d.danceability}</strong><hr><strong>energy: ${d.energy}</strong><hr>`);
+            //return (`<strong>${label}: ${d[chosen_xaxis]}</strong><hr><strong> danceability: ${d.danceability}</strong><hr><strong>energy: ${d.energy}</strong><hr>`);
+            return (`<strong>${d.year}</strong><hr><strong>${label}: ${d[chosen_xaxis]}</strong><hr><strong> Popularity: ${d[chosen_yaxis]}</strong>`)
         });
 
     // Step 2: Create the tooltip in chartGroup.

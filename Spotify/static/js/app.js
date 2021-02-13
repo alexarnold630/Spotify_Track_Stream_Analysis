@@ -2,7 +2,7 @@ $(document).ready(function() {
     makeMap();
     var selectionFilter = $("#data_columns").val();
     readStreamsData(selectionFilter);
-    buildBubbleChart();
+    //buildBubbleChart();
     
     //Event Listener
     $("#data_columns").on("change", function() {
@@ -122,6 +122,8 @@ function buildBarchart(barData){
             xaxis: {
                 type: "category",
                 title: "Track Name",
+                tickvals: barData.map( x => x["Track Name"]),
+                ticktext: barData.map( x => x["Track Name"].slice(0,7)+"..."),
                 font: {
                     size: 14,
                 }
@@ -138,7 +140,7 @@ function buildBarchart(barData){
                 r: 80,
                 b: 80,
                 t: 30,
-                pad: 20
+                pad: 0
               },
         };
           
@@ -146,46 +148,45 @@ function buildBarchart(barData){
     };  
 
 
-function buildBubbleChart(genreData) {
+// function buildBubbleChart(genreData) {
 
-    genreData.forEach(function(row) {
-        row.acousticness = +row.acousticness;
-        row.danceability = +row.danceability;
-        row.duration_ms = +row.duration_ms
-        row.energy = +row.energy;
-        row.instrumentalness = +row.instrumentalness;
-        row.liveness = +row.liveness;
-        row.loudness = +row.loudness;
-        row.speechiness = +row.speechiness;
-        row.tempo = +row.tempo;
-        row.valence = +row.valence;
-        row.popularity = +row.popularity;
-        row.key = +row.key;
-        row.mode = +row.mode;
-    });
+//     genreData.forEach(function(row) {
+//         row.acousticness = +row.acousticness;
+//         row.danceability = +row.danceability;
+//         row.duration_ms = +row.duration_ms
+//         row.energy = +row.energy;
+//         row.instrumentalness = +row.instrumentalness;
+//         row.liveness = +row.liveness;
+//         row.loudness = +row.loudness;
+//         row.speechiness = +row.speechiness;
+//         row.tempo = +row.tempo;
+//         row.valence = +row.valence;
+//         row.popularity = +row.popularity;
+//         row.key = +row.key;
+//         row.mode = +row.mode;
+//     });
 
-    var trace1 = {
-        x: genreData.map( x => x.Popularity),
-        y: genreData.map( x => x.Count),
-        //text: sample_data.otu_labels.map(String),
-        mode: 'markers',
-        marker: {
-        color: byGenresData.map( x => x.genres),
-        opacity: [1, 0.8, 0.6, 0.4],
-        size: genreData.map( x => x.Count)
-        }
-    };
+//     var trace1 = {
+//         x: genreData.map( x => x.Popularity),
+//         y: genreData.map( x => x.Count),
+//         //text: sample_data.otu_labels.map(String),
+//         mode: 'markers',
+//         marker: {
+//         color: byGenresData.map( x => x.genres),
+//         opacity: [1, 0.8, 0.6, 0.4],
+//         size: genreData.map( x => x.Count)
+//         }
+//     };
 
-    var data = [trace1];
+//     var data = [trace1];
 
-    var layout = {
-        title: '<b>Genre Popularity<b>',
-        showlegend: true,
-        height: 600,
-        width: 1000,
-        yaxis: {title: "Number of Songs"},
-        xaxis: {title: "Popularity"}
-    };
+//     var layout = {
+//         title: '<b>Genre Popularity<b>',
+//         showlegend: true,
+//         height: 600,
+//         width: 1000,
+//         yaxis: {title: "Number of Songs"},
+//         xaxis: {title: "Popularity"}
+//     };
 
-    Plotly.newPlot('bubble', data, layout);
-}
+//     Plotly.newPlot('bubble', data, layout);
