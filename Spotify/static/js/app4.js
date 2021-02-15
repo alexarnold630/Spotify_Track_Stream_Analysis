@@ -83,7 +83,7 @@ function buildTableString2(allData) {
 
         //redraw
         $("#table").DataTable({
-            "pageLength": 50, 
+            "pageLength": 10, 
             dom: 'Bfrtip', //lbfrtip if you want the length changing thing
             buttons: [
                 { extend: 'copyHtml5' },

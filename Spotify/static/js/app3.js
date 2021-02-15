@@ -69,7 +69,7 @@ function buildTableString(yearData) {
     //destroy datatable
     $("table").DataTable().clear().destroy();
 
-    var datarows = yearData.map(x => [x["year"], x["acousticness"]])
+    var datarows = yearData.map(x => [x["year"], x["acousticness"], x["danceability"], x["duration_ms"], x["energy"], x["instrumentalness"], x["liveness"], x["loudness"], x["speechiness"], x["tempo"], x["valence"], x["popularity"], x["key"], x["mode"]])
 
     //redraw
     $("#table").DataTable({

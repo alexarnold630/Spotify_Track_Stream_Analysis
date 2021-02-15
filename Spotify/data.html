@@ -39,7 +39,9 @@
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Spotify</a>
+        <a class="navbar-brand" href="index.html">
+            <img src="static/images/spotify.png" alt="logo" style="width:40px;height:40px;">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -89,25 +91,29 @@
       <div class="container-fluid">
           <div class="row margin-top-50">
               <div class="col-md-2">
-                  <aside class="filters">
-                      <div class="panel panel-default">
-                          <div class="panel-heading">Filter Search</div>
-                          <div class="panel-body">
-                              <form id="form">
-                                  <div class="form-group">
-                                      <ul class="list-group" id="filters">
-                                          <li class="filter list-group-item">
-                                              <label for="year">Enter a Year</label>
-                                              <input class="form-control" id="year" type="text" placeholder="2010">
-                                          </li>
-                                      </ul>
-                                  </div>
-                                  <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
-                                  <button id="filter-clear" type="button" class="btn btn-secondary">Clear Filters</button>
-                              </form>
-                          </div>
-                      </div>
-                  </aside>
+                <!--<div class="jumbotron">-->
+                    <aside class="filters">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Filter Search</div>
+                            <div class="panel-body">
+                                <form id="form">
+                                    <div class="form-group">
+                                        <ul class="list-group" id="filters">
+                                            <li class="filter list-group-item">
+                                                <label for="year">Enter a Year</label>
+                                                <input class="form-control" id="year" type="text" placeholder="2010">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group-vertical">
+                                        <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                                        <button id="filter-clear" type="button" class="btn btn-success">Clear Filters</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                <!--</div>-->
               </div>
               <div class="col-md-10">
                   <div id="table-area" class="">
@@ -116,7 +122,7 @@
                               <tr>
                                   <th class="table-head">Year</th>
                                   <th class="table-head">Acousticness</th>
-                                  <!--<th class="table-head">Dancebility</th>
+                                  <th class="table-head">Dancebility</th>
                                   <th class="table-head">Duration_MS</th>
                                   <th class="table-head">Energy</th>
                                   <th class="table-head">Instrumentalness</th>
@@ -127,7 +133,7 @@
                                   <th class="table-head">Valence</th>
                                   <th class="table-head">Popularity</th>
                                   <th class="table-head">Key</th>
-                                  <th class="table-head">Mode</th>-->
+                                  <th class="table-head">Mode</th>
                               </tr>
                           </thead>
                           <tbody></tbody>
