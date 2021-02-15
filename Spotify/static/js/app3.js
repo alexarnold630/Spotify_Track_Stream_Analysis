@@ -25,7 +25,7 @@ function resetFilters() {
 
 function buildTable() {
     d3.csv("static/data/data_by_year.csv").then(function(yearData) {
-
+        var dateFilter = $("#year").val();
         // apply filters
        var filteredData = yearData
        if (dateFilter) {
@@ -35,7 +35,7 @@ function buildTable() {
        if (filteredData.length === 0) {
            alert("No Data Found!");
        } else {
-            var dateFilter = $("#year").val();
+            
             filteredData.forEach(function(row) {
                 row.acousticness = parseFloat(row.acousticness).toFixed(2);
                 row.danceability = parseFloat(row.danceability).toFixed(2);

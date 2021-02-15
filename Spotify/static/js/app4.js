@@ -17,8 +17,7 @@ $(document).ready(function() {
 }); 
 
 function resetFilters() {
-    $("#streans").val("");
-    $("#streans").text("");
+    $("#streams").val("");
 }
 
 function buildUniqueFilterHelper(colName, filterID) {
