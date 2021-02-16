@@ -117,18 +117,8 @@ function makeLineChart(filterData){
             .domain([0, total_max])
             .range([chart_height, 0]);
 
-        // var yScale1 = d3.scaleLinear()
-        //     .domain([0, col1_max])
-        //     .range([chart_height, 0]);
-
-        // var yScale2 = d3.scaleLinear()
-        //     .domain([0, col2_max])
-        //     .range([chart_height, 0]);
-
         // STEP 5: CREATE THE AXES
         var leftAxis = d3.axisLeft(yScale);
-        //var leftAxis = d3.axisLeft(yScale1);
-        //var rightAxis = d3.axisLeft(yScale2);
         var bottomAxis = d3.axisBottom(xScale); // cast the datetime back to a string for display (only for time series)
 
         chartGroup.append("g")
@@ -137,11 +127,6 @@ function makeLineChart(filterData){
 
         chartGroup.append("g")
             .call(leftAxis);
-
-        // chartGroup.append("g")
-        //     .attr("transform", `translate(${chart_width}, 0)`)
-        //     // .attr("stroke", "purple")
-        //     .call(rightAxis);
         
         // STEP 6: CREATE THE GRAPH
 
@@ -179,7 +164,6 @@ function makeLineChart(filterData){
             .attr("d", line_gen1(filterData))
             .classed("line red", true)
             
-        
         var line1_length = line1.node().getTotalLength();
         line1.attr("stroke-dasharray", `${line1_length} ${line1_length}`)
             .attr("stroke-dashoffset", line1_length)
@@ -253,7 +237,6 @@ function makeLineChart(filterData){
             .duration(5000)
             .attr("stroke-dashoffset", 0);
         
-        
         // STEP 7: ADD TEXT
         chartGroup.append("text")
             .attr("x", (chart_width / 2))             
@@ -270,14 +253,14 @@ function makeLineChart(filterData){
             .attr("x", 0 - (chart_height / 2))
             .attr("dy", "1em")
             .style("font-size", "14px") 
-            //.attr("class", "axisText")
+            .style("font-weight", "bold") 
             .text("Value");
 
         chartGroup.append("text")
             .attr("transform", `translate(${chart_width / 2}, ${chart_height + margin.top + 20})`)
             .attr("text-anchor", "middle")
             .attr("font-size", "14px")
-            //.attr("class", "axisText")
+            .style("font-weight", "bold") 
             .text("Year");
         
         //STEP 8: ADD LEGEND
@@ -347,11 +330,18 @@ function buildHeatmap(filterData) {
 
     var layout = {
         title: {
-            text: "Audio Feature Heatmap",
+            text: "<b>Audio Feature Heatmap</b>",
             font: {
                 size: 18,
             }
-        }
+        },
+        margin: {
+            l: 160,
+            r: 80,
+            b: 80,
+            t: 30,
+            pad: 10
+          },
     };
 
     Plotly.newPlot('heatmap', data, layout);

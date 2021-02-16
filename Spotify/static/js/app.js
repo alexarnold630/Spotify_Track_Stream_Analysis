@@ -61,19 +61,18 @@ function makeMap() {
                 locations: unpack(rows, 'Region'),
                 z: unpack(rows, 'Total Streams'),
                 text: unpack(rows, 'Country'),
-                    // unpack(rows, 'Total Streams')],
                 hovertemplate: '%{text}: %{z}<extra></extra>',
-                autocolorscale: true
+                colorscale: "Viridis",
             }];
             var layout = {
-            title: 'Total Streams per Country',
+            title: '<b>Total Streams per Country</b>',
             geo: {
                 projection: {
                     type: 'orthographic'
                 }
             },
             hovermode: "closest",
-            hoverlabel: { bgcolor: "#FFF" },
+            hoverlabel: { bgcolor: "#FFF" }
             };
         Plotly.newPlot("map", data, layout, {showLink: false});
     });
@@ -118,10 +117,10 @@ function buildBarchart(barData){
         var data = [trace];
     
         var layout = {
-            title: "Number of Streams by Track Name for 2020",
+            title: "<b>Number of Streams by Track Name for 2020</b>",
             xaxis: {
                 type: "category",
-                title: "Track Name",
+                title: "<b>Track Name</b>",
                 tickvals: barData.map( x => x["Track Name"]),
                 ticktext: barData.map( x => x["Track Name"].slice(0,7)+"..."),
                 font: {
@@ -129,7 +128,7 @@ function buildBarchart(barData){
                 }
             },
             yaxis: {
-                title: "No. Streams (in billions)",
+                title: "<b>No. Streams (in billions)</b>",
                 font: {
                     size: 14,
                 }
