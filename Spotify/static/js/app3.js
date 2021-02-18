@@ -11,6 +11,7 @@ $(document).ready(function() {
     $("#filter-clear").on("click", function(e) {
         e.preventDefault();
         resetFilters();
+        buildTable();
     });
     $("#form").on("submit", function(e) {
         e.preventDefault();

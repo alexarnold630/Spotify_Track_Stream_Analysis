@@ -9,6 +9,7 @@ $(document).ready(function() {
     $("#filter-clear").on("click", function(e) {
         e.preventDefault();
         resetFilters();
+        buildTable();
     });
     $("#form").on("submit", function(e) {
         e.preventDefault();
@@ -17,7 +18,8 @@ $(document).ready(function() {
 }); 
 
 function resetFilters() {
-    $("#streams").val("");
+    $("#streams").val("All");
+
 }
 
 function buildUniqueFilterHelper(colName, filterID) {
