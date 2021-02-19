@@ -10,12 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/d3Style.css">
-
-   <!-- <link rel="stylesheet"  href="style.css">-->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
     <script src="https://unpkg.com/jeezy@1.13.1/lib/jeezy.min.js"></script>
@@ -41,9 +38,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="streams.html">Dashboard</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="sound.html">Sound</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="data.html">Data</a>
                 </li>
@@ -68,7 +62,7 @@
     <div class="container-fluid">
         <div class="row" style="margin-top:5%">
             <div class = "col-lg-12">
-                <h3>Change in Audio Featuers Over Time</h3>
+                <h3>Change in Audio Features Over Time</h3>
                 <p class="text-success">Filter by decade or view entire time period (1920-present) to view audio feature changes over time.</p>
                 <p>
                     Audio features include acousticness, danceability, energy, instrumentalness, liveness, speechiness, and valance. 
@@ -115,13 +109,13 @@
             </div>
             <div class = "col-md-4">
                 <p> 
-                    Slight positive correlation between instrumentalnessand acousticnessSlight negative correlation between 
-                    danceability and acousticnessNegative correlation between energy and acousticnessSlight positive 
-                    correlation between energy and danceability Slight negative correlation between instrumentalnessand 
-                    danceability Negative correlation between speechiness and energy.Negative correlation between energy and 
-                    instrumentalness.Slight positive correlation between danceability and energy. No strong correlations 
-                    between valence and acousticness, danceability, energy, liveness, or speechiness. No strong correlation 
-                    between speechiness and acousticness, danceability, instrumentalness, liveness, valence. 
+                    Slight positive correlation between instrumentalnessand acousticness, energy and danceability. 
+                    Slight negative correlation between danceability and acousticness, instrumentalness and danceability.
+                    Negative correlation between energy and acousticness, speechiness and energy, and energy and instumentalness. 
+                    <br>
+                    <br>
+                    No strong correlations between valence and acousticness, danceability, energy, liveness, or speechiness. 
+                    No strong correlations between speechiness and acousticness, danceability, instrumentalness, liveness, valence. 
                 </p>
             </div>
         </div>
@@ -129,23 +123,23 @@
         <div class="row" style="margin-top:5%">
             <div class = "col-md-12">
                 <h3>Relationships between Audio Features</h3>
+                <p class="text-success"> Change the x-axis to see how additional audio features relate to popularity by year.
+                </p>
+                <br>
             </div>
         </div>
         <div class="row">
             <div class = "col-md-12">
                 <p> 
-                    After viewing the line plot above we decided to look deeper into the relationship between popularity and valance, 
-                    danceability, and energy while also taking into account the year that the song was produced. 
-                    <br>
-                    <br>
-                    Change the xaxis of the scatter plot using the button at the bottom of the page.
-                    <br>
-                    <br>
                     From the 1960s through 2000 there is a positive correlation between danceability and popularity. From 2000 through today 
-                    it appears that danceability has become less popular. -Note: 2021 appears to be an outlier From the mid 1950s through 
-                    today there is a positive correlation between energy and popularity. -Note: 2021 appears to be an outlier 
+                    it appears that danceability has become less popular. 2021 appears to be an outlier possibly due to the year not being completed. 
+                    <br>
+                    <br>
+                    From the mid 1950s through today there is a positive correlation between energy and popularity. 2021 also appears to be an outlier. 
+                    <br>
+                    <br>
                     No strong correlation between popularity and valance. Appears to be a cluster of data points in the middle of the 
-                    graph. -Note: Cluster of data points with very low popularity but a range of valence. 
+                    graph. There is a cluster of data points with very low popularity but a range of valence values. 
                 </p>
             </div>
         </div>

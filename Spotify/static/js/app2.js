@@ -12,6 +12,7 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
+        readYearData(-1);
         doWork();
     });
 });
@@ -243,8 +244,7 @@ function makeLineChart(filterData){
             .attr("y", 0 - (margin.top / 2))
             .attr("text-anchor", "middle")  
             .style("font-size", "18px") 
-            .style("font-weight", "bold") 
-            //.attr("class", "axisText")  
+            .style("font-weight", "bold")  
             .text("Audio Features Over Time");
 
         chartGroup.append("text")
@@ -333,6 +333,8 @@ function buildHeatmap(filterData) {
             text: "<b>Audio Feature Heatmap</b>",
             font: {
                 size: 18,
+                family: "Nunito Sans",
+                weight: "bold"
             }
         },
         margin: {

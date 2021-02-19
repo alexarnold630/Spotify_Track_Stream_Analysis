@@ -2,10 +2,15 @@ $(document).ready(function() {
     makeMap();
     var selectionFilter = $("#data_columns").val();
     readStreamsData(selectionFilter);
-    //buildBubbleChart();
     
     //Event Listener
     $("#data_columns").on("change", function() {
+        var selectionFilter = $("#data_columns").val();
+        readStreamsData(selectionFilter);
+    });
+
+    $(window).resize(function() {
+        makeMap();
         var selectionFilter = $("#data_columns").val();
         readStreamsData(selectionFilter);
     });
@@ -65,15 +70,20 @@ function makeMap() {
                 colorscale: "Viridis",
             }];
             var layout = {
-            title: '<b>Total Streams per Country</b>',
-            geo: {
-                projection: {
-                    type: 'orthographic'
+                title: '<b>Total Streams per Country</b>',
+                geo: {
+                    projection: {
+                        type: 'orthographic'
+                    }
+                },
+                hovermode: "closest",
+                hoverlabel: { bgcolor: "#FFF" },
+                font: {
+                    size: 14,
+                    family: "Nunito Sans",
+                    weight: "bold"
                 }
-            },
-            hovermode: "closest",
-            hoverlabel: { bgcolor: "#FFF" }
-            };
+            }
         Plotly.newPlot("map", data, layout, {showLink: false});
     });
 }
@@ -141,6 +151,11 @@ function buildBarchart(barData){
                 t: 30,
                 pad: 0
               },
+            font: {
+                size: 14,
+                family: "Nunito Sans",
+                weight: "bold"
+            }
         };
           
           Plotly.newPlot('bar', data, layout);

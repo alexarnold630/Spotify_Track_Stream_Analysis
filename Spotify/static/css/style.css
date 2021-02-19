@@ -59,17 +59,20 @@
   box-shadow:0 0 0 .2rem rgba(102,201,136,.5)}
 
 .table-success,.table-success>td,.table-success>th{
-  background-color:#c3f7d5
-}
+  background-color:white}
 
 .table-success tbody+tbody,.table-success td,.table-success th,.table-success thead th{
-  border-color:#a0f2bd} 
+  border-color:#a1deb6}
 
 .table-hover .table-success:hover{
-  background-color:#b1f4c9}
+  background-color:#bae6c9}
 
 .table-hover .table-success:hover>td,.table-hover .table-success:hover>th{
-  background-color:#b1f4c9}
+  background-color:#bae6c9}
+
+.table-success,.table-success>td,.table-success>th{
+  background-color:#1ED760
+}
 
 .line {
     fill: none;
