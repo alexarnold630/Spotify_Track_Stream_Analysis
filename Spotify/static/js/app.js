@@ -77,7 +77,6 @@ function makeMap() {
                     }
                 },
                 hovermode: "closest",
-                hoverlabel: { bgcolor: "#FFF" },
                 font: {
                     size: 14,
                     family: "Nunito Sans",
@@ -127,7 +126,7 @@ function buildBarchart(barData){
         var data = [trace];
     
         var layout = {
-            title: "<b>Number of Streams by Track Name for 2020</b>",
+            title: "<b>2020 Streams by Track</b>",
             xaxis: {
                 type: "category",
                 title: "<b>Track Name</b>",

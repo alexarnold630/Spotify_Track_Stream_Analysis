@@ -264,8 +264,9 @@ function makeLineChart(filterData){
             .text("Year");
         
         //STEP 8: ADD LEGEND
+        //Legend code from 
         var ordinal = d3.scaleOrdinal()
-            .domain(["acousticness", "danceability", "energy", "instrumentalness", "liveness", "speechiness", "valence"])
+            .domain(["Acousticness", "Danceability", "Energy", "Instrumentalness", "Liveness", "Speechiness", "Valence"])
             .range([ '#eb1e32', '#ffc864', '#1ED760', '#007aff', '#2d46b9', '#af2896', '#f573a0']);
 
         chartGroup.append("g")
@@ -273,12 +274,8 @@ function makeLineChart(filterData){
             .attr("transform", `translate(${chart_width},0)`);
 
         var legendOrdinal = d3.legendColor()
-            //d3 symbol creates a path-string, for example
-            //"M0,-8.059274488676564L9.306048591020996,
-            //8.059274488676564 -9.306048591020996,8.059274488676564Z"
             .shape("path", d3.symbol().type(d3.symbolTriangle).size(150)())
             .shapePadding(10)
-            //use cellFilter to hide the "e" cell
             .cellFilter(function(d){ return d.label !== "e" })
             .scale(ordinal);
 
@@ -449,7 +446,15 @@ function doWork() {
             .attr("y", d => yScale(d.popularity))
             .delay(function(d, i) { return i * 100 });
 
-        // STEP 7: Add Axes Labels
+        // STEP 7: Add Labels
+        chartGroup.append("text")
+            .attr("x", (chart_width / 2))             
+            .attr("y", 0 - (margin.top / 2))
+            .attr("text-anchor", "middle")  
+            .style("font-size", "18px") 
+            .style("font-weight", "bold")  
+            .text("Relationship between Audio Features and Popularity");
+
         // Create axes labels
         chartGroup.append("text")
             .attr("transform", "rotate(-90)")
