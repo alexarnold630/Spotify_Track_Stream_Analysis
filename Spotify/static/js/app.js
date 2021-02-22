@@ -132,6 +132,7 @@ function buildBarchart(barData){
                 title: "<b>Track Name</b>",
                 tickvals: barData.map( x => x["Track Name"]),
                 ticktext: barData.map( x => x["Track Name"].slice(0,7)+"..."),
+                //ticktext: barData.map( x => x["Track Name"]),
                 font: {
                     size: 14,
                 }
